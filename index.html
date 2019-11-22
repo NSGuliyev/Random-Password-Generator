@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Password Generator </h1>
+    <div class="container">
+
+        <div class="top" class="row">
+
+            <div class="col-sm-12">
+                <h3>Generate a Password</h3>
+            </div>
+
+        </div>
+
+        <div class="middle" class="row">
+
+            <div class="col-sm-12">
+                <input type="text" id="showpassword"/>
+            </div>
+
+        </div>
+        <div class="bottom" class="row">
+
+
+            <button onclick="generate()" type="button" class="btn btn-danger btn-lg" id="generate">Generate
+                Password</button>
+
+
+
+            <button onclick="copyPassword()" type="button" class="btn btn-secondary btn-lg" id="clipboard">Copy to
+                Clipboard</button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        var length_of_password = prompt("Enter the length of your password(between 8 and 128)");
+        // checklength(length_of_password);
+        var specialchart = confirm("Do you want Special Characters in your password ?");
+        var numericchart = confirm("Do you want Numeric Characters in your password ?");
+        var lowercasechart = confirm("Do you want Lowercase Characters in your password ?");
+        var uppercasechart = confirm("Do you want Uppercase Characters in your password ?");
+
+
+        var choice_specialchart = '!#$%&?@[\]^_`{|}~'.split('');
+        var choice_numericchart = '0123456789'.split('');
+        var choice_lowercasechart = 'abcdefghijklmnopqrstuvwxyz'.split('');
+        var choice_uppercasechart = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+        var total_choice = [];
+
+        if (specialchart) { total_choice = total_choice.concat(choice_specialchart) };
+        if (numericchart) { total_choice = total_choice.concat(choice_numericchart) };
+        if (lowercasechart) { total_choice = total_choice.concat(choice_lowercasechart) };
+        if (uppercasechart) { total_choice = total_choice.concat(choice_uppercasechart) };
+
+        var checklength = function (length_of_password) {
+            if (length_of_password <= 8 && length_of_password >= 128) {
+                alert("Your choice doesn't meet our password requirements")
+            };}
+
+
+            var Randommax = total_choice.length;
+            var Randomnumber = 0;
+
+            var password = '';
+
+            for (var i = 0; i < length_of_password; i++) {
+
+                Randomnumber = Math.floor(Math.random() * (Randommax));
+                password = password + total_choice[Randomnumber];
+            }
+
+            document.getElementById("showpassword").value = password;
+
+
+            function copyPassword() {
+
+                document.getElementById("showpassword").select();
+
+                document.execCommand("Copy");
+
+                alert("Password copied to clipboard!");
+
+            }
+
+
+            var generate = document.getElementById("generate");
+            generate.addEventListener("click", generate())
+
+
+
+
+
+
+
+            function generate() {
+                var length_of_password = prompt("Enter the length of your password(between 8 and 128)")
+            };
+
+
+    </script>
+</body>
+
+</html>
