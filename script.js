@@ -36,7 +36,8 @@ for (var i = 0; i < length_of_password; i++) {
     password = password + total_choice[Randomnumber];
 }
 
-document.getElementById("showpassword").value = password;
+
+// document.getElementById("showpassword").Value = password;
 
 
 function copyPassword() {
@@ -52,10 +53,6 @@ function copyPassword() {
 
 var generate = document.getElementById("generate");
 generate.addEventListener("click", generate())
-
-
-
-
 
 
 
