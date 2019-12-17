@@ -1,5 +1,9 @@
 var length_of_password = prompt("Enter the length of your password(between 8 and 128)");
 // checklength(length_of_password);
+if (length_of_password <= 8 && length_of_password >= 128) {
+    alert("Your choice doesn't meet our password requirements")
+};
+}
 var specialchart = confirm("Do you want Special Characters in your password ?");
 var numericchart = confirm("Do you want Numeric Characters in your password ?");
 var lowercasechart = confirm("Do you want Lowercase Characters in your password ?");
@@ -19,10 +23,7 @@ if (lowercasechart) { total_choice = total_choice.concat(choice_lowercasechart) 
 if (uppercasechart) { total_choice = total_choice.concat(choice_uppercasechart) };
 
 var checklength = function (length_of_password) {
-    if (length_of_password <= 8 && length_of_password >= 128) {
-        alert("Your choice doesn't meet our password requirements")
-    };
-}
+
 
 
 var Randommax = total_choice.length;
@@ -52,7 +53,9 @@ function copyPassword() {
 
 
 var generate = document.getElementById("generate");
-generate.addEventListener("click", generate())
+generate.addEventListener("click", function() {
+    length_of_password ();
+})
 
 
 
