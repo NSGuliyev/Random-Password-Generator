@@ -1,5 +1,4 @@
 document.getElementById('generate').onclick = function newPassword() {
-    
 
     var length_of_password = prompt("Enter the length of your password(between 8 and 128)");
     var number = parseInt(length_of_password);
@@ -27,7 +26,7 @@ document.getElementById('generate').onclick = function newPassword() {
         if (numericchart) { total_choice = total_choice.concat(choice_numericchart) };
         if (lowercasechart) { total_choice = total_choice.concat(choice_lowercasechart) };
         if (uppercasechart) { total_choice = total_choice.concat(choice_uppercasechart) };
-    }
+    };
 
 
     var Randommax = total_choice.length;
@@ -41,11 +40,7 @@ document.getElementById('generate').onclick = function newPassword() {
         password = password + total_choice[Randomnumber];
     }
     document.getElementById("showpassword").value = password;
-}
-
-
-// document.getElementById("showpassword").Value = password;
-
+};
 
 function copyPassword() {
 
@@ -55,4 +50,4 @@ function copyPassword() {
 
     alert("Password copied to clipboard!");
 
-}
+};
