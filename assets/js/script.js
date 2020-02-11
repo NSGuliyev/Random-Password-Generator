@@ -1,10 +1,11 @@
 document.getElementById('generate').onclick = function newPassword() {
+    
 
     var length_of_password = prompt("Enter the length of your password(between 8 and 128)");
+    var number = parseInt(length_of_password);
 
 
-    // checklength(length_of_password);
-    if (length_of_password <= 8 || length_of_password >= 128) {
+    if (number < 8 || number > 128) {
 
         alert("Your choice doesn't meet our password requirements")
     } else {
@@ -34,7 +35,7 @@ document.getElementById('generate').onclick = function newPassword() {
 
     var password = '';
 
-    for (var i = 0; i < length_of_password; i++) {
+    for (var i = 0; i < number; i++) {
 
         Randomnumber = Math.floor(Math.random() * (Randommax));
         password = password + total_choice[Randomnumber];
