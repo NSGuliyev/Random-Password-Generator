@@ -1,0 +1,45 @@
+h1{
+    color: brown ;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.container{
+    border: 3px solid grey;
+    padding: 10px 50px;
+}
+
+.top{
+    padding: 20px 0px;
+    border-bottom: 2px solid grey;
+
+}
+
+.middle{
+    margin: 20px 0px;
+    border: 3px dotted black;
+    height: 200px;
+}
+
+#showpassword{
+    border: none;
+    font-size: 25px;
+}
+
+.bottom{
+    border-top: 2px solid grey;
+    padding: 30px 0px;
+    display:flex;
+    justify-content: space-evenly;
+
+}
+
+@media(max-width:500px){
+    .bottom{
+        flex-direction: column;
+        padding: 10px 0px;
+    }
+    .bottom button{
+        margin: 1rem;
+    }
+}
