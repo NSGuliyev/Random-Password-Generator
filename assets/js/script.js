@@ -2,8 +2,10 @@ document.getElementById('generate').onclick = function newPassword() {
 
     var length_of_password = prompt("Enter the length of your password(between 8 and 128)");
 
+
     // checklength(length_of_password);
-    if (length_of_password <= 8 && length_of_password >= 128) {
+    if (length_of_password <= 8 || length_of_password >= 128) {
+
         alert("Your choice doesn't meet our password requirements")
     } else {
 
@@ -24,25 +26,21 @@ document.getElementById('generate').onclick = function newPassword() {
         if (numericchart) { total_choice = total_choice.concat(choice_numericchart) };
         if (lowercasechart) { total_choice = total_choice.concat(choice_lowercasechart) };
         if (uppercasechart) { total_choice = total_choice.concat(choice_uppercasechart) };
-
-        var checklength = function (length_of_password) {
-
-
-
-            var Randommax = total_choice.length;
-            var Randomnumber = 0;
-
-            var password = '';
-
-            for (var i = 0; i < length_of_password; i++) {
-
-                Randomnumber = Math.floor(Math.random() * (Randommax));
-                password = password + total_choice[Randomnumber];
-            }
-        }
     }
+
+
+    var Randommax = total_choice.length;
+    var Randomnumber = 0;
+
+    var password = '';
+
+    for (var i = 0; i < length_of_password; i++) {
+
+        Randomnumber = Math.floor(Math.random() * (Randommax));
+        password = password + total_choice[Randomnumber];
+    }
+    document.getElementById("showpassword").value = password;
 }
-newPassword();
 
 
 // document.getElementById("showpassword").Value = password;
