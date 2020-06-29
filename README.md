@@ -13,3 +13,4 @@ Once the random password is generated, user has the option of Copying generated 
 
 # The Used Technologies 
 HTML, CSS, JavaScript
+    
