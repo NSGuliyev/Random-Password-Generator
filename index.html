@@ -8,8 +8,7 @@
     <title>Password Generator || Home </title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="./favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/9b158d4901.js" crossorigin="anonymous"></script>
     <script src=""></script>
@@ -21,117 +20,110 @@
         <!-- navbar -->
         <!-- hero -->
         <div class="hero">
-          <div class="hero-banner">
-            <h1>generate password</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-              veritatis molestiae fugiat incidunt exercitationem accusamus.
-            </p>
-            <a href="#featured" class="btn hero-btn scroll-link">create password</a>
-          </div>
+            <div class="hero-banner">
+                <h1>generate password</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat veritatis molestiae fugiat incidunt exercitationem accusamus.
+                </p>
+                <a href="#featured" class="btn hero-btn scroll-link">create password</a>
+            </div>
         </div>
-      </header>
-      <!-- end of header  -->	
+    </header>
+    <!-- end of header  -->
 
     <h1>Password Generator </h1>
     <div class="container">
+        <div class="section">
+            <div class="top" class="row">
+                <div class="col-sm-12">
+                    <h3>Generate a Password</h3>
+                </div>
+            </div>
 
-        <div class="top" class="row">
-            <div class="col-sm-12">
-                <h3>Generate a Password</h3>
+            <div class="middle" class="row">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td class="info-col 12"><textarea class="form-control user-input" id="showpassword" rows="4"></textarea> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bottom" class="row">
+                <button type="button" class="btn btn-danger btn-lg" id="generate">Generate Password</button>
+                <button onclick="copyPassword()" type="button" class="btn btn-secondary btn-lg" id="clipboard">Copy to Clipboard</button>
             </div>
         </div>
-
-        <div class="middle" class="row">
-
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td class="info-col 12"><textarea class="form-control user-input" id="showpassword" rows="4"></textarea> </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="bottom" class="row">
-            <button type="button" class="btn btn-danger btn-lg" id="generate">Generate Password</button>
-            <button onclick="copyPassword()" type="button" class="btn btn-secondary btn-lg" id="clipboard">Copy to Clipboard</button>
-        </div>
-
     </div>
 
-      <!-- contact -->
-      <section class="section contact" id="contact">
+    <!-- contact -->
+    <section class="section contact" id="contact">
         <div class="section-center contact-center">
-          <!-- contact title -->
-          <article class="contact-title">
-            <h3>want latest info and updates?</h3>
-            <p>Sing up for newsletter and stay up to date</p>
-          </article>
-          <!-- end of contact title -->
-          <form class="contact-form">
-            <input
-              type="email"
-              name="email"
-              class="form-control"
-              placeholder="your email
-            "
-            />
-            <button type="submit" class="btn-submit">submit</button>
-          </form>
+            <!-- contact title -->
+            <article class="contact-title">
+                <h3>want latest info and updates?</h3>
+                <p>Sing up for newsletter and stay up to date</p>
+            </article>
+            <!-- end of contact title -->
+            <form class="contact-form">
+                <input type="email" name="email" class="form-control" placeholder="your email
+            " />
+                <button type="submit" class="btn-submit">submit</button>
+            </form>
         </div>
-      </section>
-  
-      <!-- end of contact -->
+    </section>
+
+    <!-- end of contact -->
 
     <!-- footer -->
     <footer class="section footer">
-      <!-- footer links -->
-      <ul class="footer-links">
-        <!-- single link -->
-        <a href="#home" class="footer-link scroll-link">home</a>
-        <!-- end of single link -->
-        <!-- single link -->
-        <a href="#about" class="footer-link scroll-link">about</a>
-        <!-- end of single link -->
-        <!-- single link -->
-        <a href="#services" class="footer-link scroll-link">services</a>
-        <!-- end of single link -->
-      </ul>
-      <!-- end of footer links -->
+        <!-- footer links -->
+        <ul class="footer-links">
+            <!-- single link -->
+            <a href="#home" class="footer-link scroll-link">home</a>
+            <!-- end of single link -->
+            <!-- single link -->
+            <a href="#about" class="footer-link scroll-link">about</a>
+            <!-- end of single link -->
+            <!-- single link -->
+            <a href="#services" class="footer-link scroll-link">services</a>
+            <!-- end of single link -->
+        </ul>
+        <!-- end of footer links -->
 
-      <!-- footer icons -->
-      <ul class="footer-icons">
-        <!-- single icon -->
-        <li>
-          <a href="https://www.twitter.com" target="_blank" class="footer-icon">
-            <i class="fab fa-facebook"></i>
-          </a>
-        </li>
-        <!-- end of single icon -->
-        <!-- single icon -->
-        <li>
-          <a href="https://www.twitter.com" target="_blank" class="footer-icon">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-        <!-- end of single icon -->
-        <!-- single icon -->
-        <li>
-          <a href="https://www.twitter.com" target="_blank" class="footer-icon">
-            <i class="fab fa-squarespace"></i>
-          </a>
-        </li>
-        <!-- end of single icon -->
-      </ul>
-      <!-- end of footer icons -->
-      <p class="copyright">
-        copyright &copy; password generator<span id="date"></span>.
-        all right reserved
-      </p>
+        <!-- footer icons -->
+        <ul class="footer-icons">
+            <!-- single icon -->
+            <li>
+                <a href="https://www.twitter.com" target="_blank" class="footer-icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </li>
+            <!-- end of single icon -->
+            <!-- single icon -->
+            <li>
+                <a href="https://www.twitter.com" target="_blank" class="footer-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            <!-- end of single icon -->
+            <!-- single icon -->
+            <li>
+                <a href="https://www.twitter.com" target="_blank" class="footer-icon">
+                    <i class="fab fa-squarespace"></i>
+                </a>
+            </li>
+            <!-- end of single icon -->
+        </ul>
+        <!-- end of footer icons -->
+        <p class="copyright">
+            copyright &copy; password generator<span id="date"></span>. all right reserved
+        </p>
     </footer>
     <script src="dist/index.js"></script>
     </head>
 
 </body>
+
 </html>
