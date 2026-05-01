@@ -1,53 +1,61 @@
 document.getElementById('generate').onclick = function newPassword() {
+    const lengthPrompt = prompt("Enter the length of your password (between 8 and 128)");
+    const passwordLength = parseInt(lengthPrompt);
 
-    var length_of_password = prompt("Enter the length of your password(between 8 and 128)");
-    var number = parseInt(length_of_password);
-
-
-    if (number < 8 || number > 128) {
-
-        alert("Your choice doesn't meet our password requirements")
-    } else {
-
-        var specialchart = confirm("Do you want Special Characters in your password ?");
-        var numericchart = confirm("Do you want Numeric Characters in your password ?");
-        var lowercasechart = confirm("Do you want Lowercase Characters in your password ?");
-        var uppercasechart = confirm("Do you want Uppercase Characters in your password ?");
-
-
-        var choice_specialchart = '!#$%&?@[\]^_`{|}~'.split('');
-        var choice_numericchart = '0123456789'.split('');
-        var choice_lowercasechart = 'abcdefghijklmnopqrstuvwxyz'.split('');
-        var choice_uppercasechart = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-
-        var total_choice = [];
-
-        if (specialchart) { total_choice = total_choice.concat(choice_specialchart) };
-        if (numericchart) { total_choice = total_choice.concat(choice_numericchart) };
-        if (lowercasechart) { total_choice = total_choice.concat(choice_lowercasechart) };
-        if (uppercasechart) { total_choice = total_choice.concat(choice_uppercasechart) };
-    };
-
-
-    var Randommax = total_choice.length;
-    var Randomnumber = 0;
-
-    var password = '';
-
-    for (var i = 0; i < number; i++) {
-
-        Randomnumber = Math.floor(Math.random() * (Randommax));
-        password = password + total_choice[Randomnumber];
+    if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+        alert("Your choice doesn't meet our password requirements (8-128 characters)");
+        return;
     }
+
+    const useSpecialChars = confirm("Do you want Special Characters in your password?");
+    const useNumericChars = confirm("Do you want Numeric Characters in your password?");
+    const useLowercaseChars = confirm("Do you want Lowercase Characters in your password?");
+    const useUppercaseChars = confirm("Do you want Uppercase Characters in your password?");
+
+    const specialCharacters = '!#$%&?@[\\]^_`{|}~'.split('');
+    const numericCharacters = '0123456789'.split('');
+    const lowercaseCharacters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    const uppercaseCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+    let availableCharacters = [];
+
+    if (useSpecialChars) availableCharacters = availableCharacters.concat(specialCharacters);
+    if (useNumericChars) availableCharacters = availableCharacters.concat(numericCharacters);
+    if (useLowercaseChars) availableCharacters = availableCharacters.concat(lowercaseCharacters);
+    if (useUppercaseChars) availableCharacters = availableCharacters.concat(uppercaseCharacters);
+
+    if (availableCharacters.length === 0) {
+        alert("Please select at least one character type!");
+        return;
+    }
+
+    let password = '';
+    for (let i = 0; i < passwordLength; i++) {
+        const randomIndex = Math.floor(Math.random() * availableCharacters.length);
+        password += availableCharacters[randomIndex];
+    }
+
     document.getElementById("showpassword").value = password;
+
+    // Scroll to the password generator section
+    document.getElementById("generate-section").scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
 function copyPassword() {
+    const passwordField = document.getElementById("showpassword");
+    const password = passwordField.value;
 
-    document.getElementById("showpassword").select();
+    if (!password) {
+        alert("No password to copy! Generate a password first.");
+        return;
+    }
 
-    document.execCommand("Copy");
-
-    alert("Password copied to clipboard!");
-
-};
+    navigator.clipboard.writeText(password).then(() => {
+        alert("Password copied to clipboard!");
+    }).catch(() => {
+        // Fallback for older browsers
+        passwordField.select();
+        document.execCommand("Copy");
+        alert("Password copied to clipboard!");
+    });
+}

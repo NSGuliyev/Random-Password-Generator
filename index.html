@@ -8,10 +8,10 @@
     <title>Password Generator || Home </title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="./favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/9b158d4901.js" crossorigin="anonymous"></script>
-    <script src=""></script>
 </head>
 
 <body>
@@ -23,36 +23,39 @@
             <div class="hero-banner">
                 <h1>generate password</h1>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat veritatis molestiae fugiat incidunt exercitationem accusamus.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat veritatis molestiae fugiat
+                    incidunt exercitationem accusamus.
                 </p>
-                <a href="#featured" class="btn hero-btn scroll-link">create password</a>
+                <a href="#generate-section" class="btn hero-btn scroll-link">create password</a>
             </div>
         </div>
     </header>
     <!-- end of header  -->
 
-    <h1>Password Generator </h1>
-    <div class="container">
+    <div class="container" id="generate-section">
+        <h1>Password Generator</h1>
         <div class="section">
-            <div class="top" class="row">
+            <div class="top row">
                 <div class="col-sm-12">
                     <h3>Generate a Password</h3>
                 </div>
             </div>
 
-            <div class="middle" class="row">
+            <div class="middle row">
                 <table class="table">
                     <tbody>
                         <tr>
-                            <td class="info-col 12"><textarea class="form-control user-input" id="showpassword" rows="4"></textarea> </td>
+                            <td class="info-col 12"><textarea class="form-control user-input" id="showpassword"
+                                    rows="4"></textarea> </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="bottom" class="row">
+            <div class="bottom row">
                 <button type="button" class="btn btn-danger btn-lg" id="generate">Generate Password</button>
-                <button onclick="copyPassword()" type="button" class="btn btn-secondary btn-lg" id="clipboard">Copy to Clipboard</button>
+                <button onclick="copyPassword()" type="button" class="btn btn-secondary btn-lg" id="clipboard">Copy to
+                    Clipboard</button>
             </div>
         </div>
     </div>
@@ -73,7 +76,6 @@
             </form>
         </div>
     </section>
-
     <!-- end of contact -->
 
     <!-- footer -->
@@ -121,9 +123,7 @@
             copyright &copy; password generator<span id="date"></span>. all right reserved
         </p>
     </footer>
-    <script src="dist/index.js"></script>
-    </head>
-
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
